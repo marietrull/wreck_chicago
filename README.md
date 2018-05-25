@@ -23,14 +23,14 @@ Please see https://github.com/marietrull/wreck_chicago_API for API documentation
 
 ![alt text](https://i.imgur.com/HxFTbeh.png)
 
-6. Users can access their by clicking "My Wrecks" in the nav bar. They will be taken to a list of all of the wrecks they've saved or added. 
+6. Users can access their list of wrecks by clicking "My Wrecks" in the nav bar. They will be taken to a list of all of the wrecks they've saved or added. 
 
 ![alt text](https://i.imgur.com/Q1yP3IM.png)
 
-7. Users can access individual wreck pages by clicking on the name of the wreck in their list. They will be taken to a showpage. If it a record that already existed, they will see the wreck show page from user store 4. If it is a wreck that they've created, they will be shown a different page that gives them the option to edit and delete. 
+7. Users can access individual wreck pages by clicking on the name of the wreck in their list. They will be taken to a showpage. If it is a wreck that they did not create, they will see the wreck show page from user store 4. If it is a wreck that they've created, they will be shown a different page that gives them the option to edit and delete. 
 
 ![alt text](https://i.imgur.com/CQO1xEA.png)
 
-8. Edit page - user's can update their wreck information and save to the database. 
+8. Edit page - users can update their wreck information and save to the database. 
 
 ![alt text](https://i.imgur.com/Q8Q2jOE.png)
