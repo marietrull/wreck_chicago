@@ -1,6 +1,10 @@
 # wreck_chicago
 
-# User Stories
+## API Documentation
+
+Please see https://github.com/marietrull/wreck_chicago_API for API documentation.
+
+## User Stories
 1. Landing page gives users the option to either register for an account or login
 ![alt text](https://i.imgur.com/MtwRrqG.png)
 
