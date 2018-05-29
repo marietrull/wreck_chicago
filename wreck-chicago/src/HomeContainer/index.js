@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import WreckStart from '../WreckStart';
 import FindWreckContainer from '../FindWreckContainer';
 import LogWreckContainer from'../LogWreckContainer';
+import MyWrecksContainer from '../MyWrecksContainer';
 
 const HomeContainer = () => {
 
@@ -13,10 +14,11 @@ const HomeContainer = () => {
 		return (
 
 			<div>
+			
 				<ul id='wreckNav'>
-					<li><a href="/home">Home</a></li>
-		  			<li><a href="/wreckFinder">Wreck Finder</a></li>
-					<li><a href="/wrecks">My Wrecks</a></li>
+					<li><Link to="/">Home</Link></li>
+		  			<li><Link to="/FindAWreck">Wreck Finder</Link></li>
+					<li><Link to="/MyWrecks">My Wrecks</Link></li>
 					<li><a href="/logout">Logout</a></li>
 				</ul>
 
@@ -24,6 +26,7 @@ const HomeContainer = () => {
 					<Route exact path='/' component={WreckStart} />
 					<Route exact path='/FindAWreck' component={FindWreckContainer} />
 					<Route exact path='/LogAWreck' component={LogWreckContainer} />
+					<Route exact path='/MyWrecks' component={MyWrecksContainer} />
 				</Switch>
 
 			</div>
