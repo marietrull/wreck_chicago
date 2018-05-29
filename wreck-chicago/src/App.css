@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.headerContainer {
+  background-color: #3385ff;
+  height: 100px;
+}
+
+.headerText {
+  color: white;
+  font-size: 65px;
+}

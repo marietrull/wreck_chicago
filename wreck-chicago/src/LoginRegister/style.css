@@ -1,0 +1,54 @@
+#logRegContain{
+
+	border-style: solid;
+	border-color: #3385ff;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 45%;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+}
+
+#TabContain {
+	margin-top: 75px;
+	display: flex;
+	flex-direction: row-reverse;
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.logRegTab {
+	background-color: #3385ff;
+	border-style: solid;
+	border-size: 2px;
+	border-color: white;
+	color: white;
+	padding: 5px;
+	font-size: 25px;
+	border-radius: 5px;
+}
+
+#inpUser {
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#inpPass {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#logBtn {
+	background-color: #3385ff;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	width: 25%;
+	height: 20px;
+}
