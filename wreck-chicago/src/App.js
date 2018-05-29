@@ -13,8 +13,9 @@ class App extends Component {
     this.state = {
 
       logged: false,
-
-      registering: false
+      registering: false,
+      message: "",
+      username: ""
 
     }
 
@@ -23,9 +24,54 @@ class App extends Component {
   changeRegistering = (e) => {
 
     const tabText = e.target.innerText;
-
     tabText === "Register" ? this.setState({registering: true}) : this.setState({registering: false});
 
+  }
+
+  loginAndRegisterBtn = (e) => {
+    
+    const buttonText = e.target.innerText;
+    const pwInputVal = e.target.parentNode.parentNode.childNodes[1].childNodes[0].value;
+    const userInputVal = e.target.parentNode.parentNode.childNodes[1].childNodes[0].value;
+    this.logInRegister(userInputVal, pwInputVal, buttonText);
+
+  }
+
+  logInRegister = async (username, password, buttonText) => {
+
+    if(this.state.registering == true){
+
+      console.log("registering")
+
+      const registerJSON = await fetch("http://localhost:9292/user/register",
+      {
+        method: "POST",
+        credentials: 'include',
+        body:JSON.stringify({username: username, password: password})
+      })
+
+      const registerResponse = await registerJSON.json();
+
+      registerResponse.success  ? this.setState({logged:true, username:registerResponse.username}) : this.setState({message: registerResponse.message})
+    }
+
+
+    else {
+
+      console.log("logging in", username, password)
+
+      const loginJSON = await fetch("http://localhost:9292/user/login",
+      {
+        method: "POST",
+        credentials: 'include',
+        body: JSON.stringify({username: username, password: password})
+      })
+
+      const loginResponse = await loginJSON.json();
+
+      loginResponse.success ? this.setState({logged:true, username:loginResponse.username}) : this.setState({message: loginResponse.message})
+    
+    }
   }
 
 
@@ -37,14 +83,17 @@ class App extends Component {
     return (
 
       <div className="App">
-        <div class='headerContainer'>
+        <div className='headerContainer'>
 
-          <div class='headerText'>
+          <div className='headerText'>
             Wreck Chicago
           </div>
 
         </div>
-        <LoginRegister changeRegistering={this.changeRegistering}/>
+
+
+        {this.state.logged ? <HomeContainer/> : <LoginRegister loginAndRegisterBtn={this.loginAndRegisterBtn} changeRegistering={this.changeRegistering}/>}
+        
       </div>
     );
   }
