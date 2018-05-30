@@ -40,7 +40,6 @@ class App extends Component {
 
     if(this.state.registering == true){
 
-      console.log("registering")
 
       const registerJSON = await fetch("http://localhost:9292/user/register",
       {
@@ -56,8 +55,6 @@ class App extends Component {
 
 
     else {
-
-      console.log("logging in", username, password)
 
       const loginJSON = await fetch("http://localhost:9292/user/login",
       {
@@ -76,8 +73,6 @@ class App extends Component {
 
 
   render() {
-
-    console.log(this.state, ' state in app.js')
 
     return (
 
