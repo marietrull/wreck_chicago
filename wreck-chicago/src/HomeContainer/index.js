@@ -7,9 +7,6 @@ import LogWreckContainer from'../LogWreckContainer';
 import MyWrecksContainer from '../MyWrecksContainer';
 
 const HomeContainer = () => {
-
-
-		console.log(this.state, 'state in HomeContainer')
 		
 		return (
 
@@ -18,6 +15,7 @@ const HomeContainer = () => {
 				<ul id='wreckNav'>
 					<li><Link to="/">Home</Link></li>
 		  			<li><Link to="/FindAWreck">Wreck Finder</Link></li>
+		  			<li><Link to="/LogAWreck">Log a Wreck</Link></li>
 					<li><Link to="/MyWrecks">My Wrecks</Link></li>
 					<li><a href="/logout">Logout</a></li>
 				</ul>
