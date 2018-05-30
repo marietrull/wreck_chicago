@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import FindWreckContainer from '../FindWreckContainer';
-import LogWreckContainer from'../LogWreckContainer';
+import LogWreck from'../LogWreck';
 
 const WreckStart = () => {
 	

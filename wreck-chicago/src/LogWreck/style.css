@@ -1,0 +1,21 @@
+#newWreckInputs {
+	border: solid;
+    border-color: #3385ff;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	margin: 10px;
+	width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wreckInput {
+	margin: 10px;
+	display: flex;
+    justify-content: space-between;
+}
+
+.wreckVal {
+	padding: 10px;
+}

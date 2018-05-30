@@ -3,7 +3,7 @@ import './style.css';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import WreckStart from '../WreckStart';
 import FindWreckContainer from '../FindWreckContainer';
-import LogWreckContainer from'../LogWreckContainer';
+import LogWreck from'../LogWreck';
 import MyWrecksContainer from '../MyWrecksContainer';
 
 const HomeContainer = () => {
@@ -23,7 +23,7 @@ const HomeContainer = () => {
 				<Switch>
 					<Route exact path='/' component={WreckStart} />
 					<Route exact path='/FindAWreck' component={FindWreckContainer} />
-					<Route exact path='/LogAWreck' component={LogWreckContainer} />
+					<Route exact path='/LogAWreck' component={LogWreck} />
 					<Route exact path='/MyWrecks' component={MyWrecksContainer} />
 				</Switch>
 

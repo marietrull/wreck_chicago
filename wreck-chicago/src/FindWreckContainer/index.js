@@ -38,25 +38,6 @@ class FindWreckContainer extends Component{
 		
 	}
 
-	getWreckInd = async	(e) => {
-
-		const wreckId = e.target.parentNode.id;
-
-		const wreckJson = await fetch(`http://localhost:9292/wrecks/${wreckId}`, {
-			credentials: 'include'
-
-		})
-
-		const wreckResponse = await wreckJson.json();
-
-		this.setState ({
-
-			wreckInd: wreckResponse.show_wreck,
-			showWreck: true
-		})
-		
-	}
-
 	showWreck = async (e) => {
 
 
@@ -85,9 +66,30 @@ class FindWreckContainer extends Component{
 
 	}
 
-	render () {
+	addWreck = async (name, latitude, longitude, depth, description, image) => {
 
-		console.log(this.state, ' State in FindWreckContainer')
+		const wrecks = await fetch ('http://localhost:9292/wrecks', {
+			method: 'POST',
+			body: JSON.stringify({
+				name: name,
+				latitude: latitude,
+				longitude: longitude,
+				depth: depth,
+				description: description,
+				image: image
+			}),
+			credentials: 'include'
+		})
+
+		const wrecksParsed = await wrecks.json();
+
+		this.setState({
+			wrecks: [...this.state.wrecks, wrecksParsed.newWreck]
+		})
+		
+	}
+
+	render () {
 
 
 		const wreckList = this.state.wrecks.map((wreck, i) => {
