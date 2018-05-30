@@ -39,18 +39,32 @@ class FindWreckContainer extends Component{
 
 		console.log(this.state, ' State in FindWreckContainer')
 
+
 		const wreckList = this.state.wrecks.map((wreck, i) => {
-			return <li className="wreckList" id={wreck.id} key={i}>{wreck.name}</li>
+
+		return <tr id={wreck.id} key={i}>
+				<td>{wreck.name}</td>
+				<td>{wreck.depth}</td>
+				<td> Directions </td>
+				<td> Show </td>
+
+				</tr>
 			
 		})
 
 		return (
 
-			<div id='wreckList'>
-				Find Wreck Container
-				{wreckList}
-			</div>
-
+		<table id="wreckTable">
+			<tbody>
+			  <tr>
+			    <th>Name</th>
+			    <th>Depth</th> 
+			    <th>Directions</th>
+			    <th>Show</th>
+			  </tr>
+			  {wreckList}
+		  </tbody>
+		</table>
 
 		)
 
