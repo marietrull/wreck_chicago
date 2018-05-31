@@ -63,7 +63,15 @@ class LogWreck extends Component {
 
 		const wrecksParsed = await wrecks.json();
 
-		console.log(wrecksParsed, 'wrecksParsed logWreck')
+		const newWreckId = await wrecksParsed.added_wreck.id;
+
+		const newWreckList = await fetch ('http://localhost:9292/userwrecks', {
+			method: 'POST',
+			body: JSON.stringify({
+				wreck_id: newWreckId
+			}), 
+			credentials: 'include'
+		})
 		
 	}
 
