@@ -28,7 +28,7 @@ class MyWrecksContainer extends Component {
 
 	getMyWrecks = async () => {
 		
-		const myWrecksJson = await fetch('http://localhost:9292/userwrecks', {
+		const myWrecksJson = await fetch('http://localhost:9292/userwrecks/mywrecks', {
 			credentials: 'include'
 		})
 
@@ -42,6 +42,8 @@ class MyWrecksContainer extends Component {
 
 
 		const wreckId = e.target.parentNode.id;
+
+		console.log(wreckId, 'wreckId')
 
 		const wreckJson = await fetch (`http://localhost:9292/wrecks/${wreckId}`, {
 			credentials: 'include'
@@ -64,7 +66,39 @@ class MyWrecksContainer extends Component {
 
 	}
 
+	deleteWreck = async () => {
+
+		const wreckId = this.state.wreckInd.id
+
+		const deleteUserWreck = await fetch (`http://localhost:9292/wrecks/${wreckId}`, {
+			method:'DELETE', 
+			credentials: 'include'
+		});
+		
+		const response = await deleteUserWreck.json();
+
+		console.log(response, 'response deleteWreck')
+
+		console.log(wreckId, 'wreckId after response')
+
+		console.log(this.state.myWrecks, 'state.myWrecks')
+
+
+		if (response.success){
+			this.setState({
+				myWrecks: this.state.myWrecks.filter((removeWreck) => removeWreck.id != wreckId)
+			})
+		}
+
+		this.setState({
+			showWreck: false
+		})
+
+	}
+
 	render () {
+
+		console.log(this.state, 'state in myWrecksContainer')
 
 		const myWrecks = this.state.myWrecks.map((wreck, i) => {
 
@@ -93,7 +127,7 @@ class MyWrecksContainer extends Component {
 				  </tbody>
 				</table>
 
-				<MyWreckShow showWreck={this.state.showWreck} closeWreck={this.closeWreck} wreckInd={this.state.wreckInd}/>
+				<MyWreckShow showWreck={this.state.showWreck} closeWreck={this.closeWreck} wreckInd={this.state.wreckInd} deleteWreck={this.deleteWreck}/>
 
 			</div>
 

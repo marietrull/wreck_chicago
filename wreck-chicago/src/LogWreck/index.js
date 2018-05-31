@@ -96,8 +96,6 @@ class LogWreck extends Component {
 
 	render () {
 
-		console.log(this.state, 'state in logWreck component')
-
 		return (
 
 			<form onSubmit={this.handleSubmit}>

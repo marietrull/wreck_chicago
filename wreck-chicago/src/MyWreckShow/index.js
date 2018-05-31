@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const MyWreckShow = ({showWreck, closeWreck, wreckInd}) => {
+const MyWreckShow = ({showWreck, closeWreck, wreckInd, deleteWreck}) => {
 
 	return (
 
@@ -19,8 +19,14 @@ const MyWreckShow = ({showWreck, closeWreck, wreckInd}) => {
 	   		 		<h2>About</h2>
 	   		 		<p>Depth: {wreckInd.depth}</p>
 	   		 		<p>Description: {wreckInd.description}</p>
+	
+		  			<button>Edit</button>
+		  			<button onClick={deleteWreck}>Delete</button>
+
 
 	  			</div>
+
+
 
 		</div>
 
