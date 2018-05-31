@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { BrowserRouter, Redirect, Route, Link, Switch } from 'react-router-dom';
+import FindWreckContainer from '../FindWreckContainer'
 import './style.css';
 
 class LogWreck extends Component {
@@ -11,7 +13,8 @@ class LogWreck extends Component {
 			longitude: '',
 			depth: '', 
 			description: '',
-			image: ''
+			image: '',
+			toMyWrecks: false
 
 		}
 	}
@@ -74,6 +77,10 @@ class LogWreck extends Component {
 			}), 
 			credentials: 'include'
 		})
+
+		this.setState({
+			toMyWrecks: true
+		})
 		
 	}
 
@@ -89,16 +96,21 @@ class LogWreck extends Component {
 			longitude: '',
 			depth: '', 
 			description: '',
-			image: ''
+			image: '',
+			toMyWrecks: false
 		})
 		
 	}
 
 	render () {
 
+		if(this.state.toMyWrecks === true){
+			return <Redirect to='/MyWrecks'/>
+		}
+
 		return (
 
-			<form onSubmit={this.handleSubmit}>
+			<form  onSubmit={this.handleSubmit}>
 				<div> Log a Wreck </div>
 
 				<div id='newWreckInputs'>
