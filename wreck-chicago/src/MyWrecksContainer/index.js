@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MyWreckShow from '../MyWreckShow';
 
 
 class MyWrecksContainer extends Component {
@@ -8,7 +9,9 @@ class MyWrecksContainer extends Component {
 		super();
 
 		this.state = {
-			myWrecks: []
+			myWrecks: [],
+			wreckInd: {},
+			showWreck: false
 		}
 	}
 
@@ -35,9 +38,33 @@ class MyWrecksContainer extends Component {
 
 	}
 
-	render () {
+	showWreck = async (e) => {
 
-		console.log(this.state, 'state in myWrecksContainer')
+
+		const wreckId = e.target.parentNode.id;
+
+		const wreckJson = await fetch (`http://localhost:9292/wrecks/${wreckId}`, {
+			credentials: 'include'
+		})
+
+		const wreckResponse = await wreckJson.json();
+
+		this.setState ({
+			wreckInd: wreckResponse.show_wreck,
+			showWreck: true
+		})
+
+	}
+
+	closeWreck = async () => {
+		
+		this.setState({
+			showWreck: false
+		})
+
+	}
+
+	render () {
 
 		const myWrecks = this.state.myWrecks.map((wreck, i) => {
 
@@ -45,12 +72,10 @@ class MyWrecksContainer extends Component {
 					<td>{wreck.name}</td>
 					<td>{wreck.depth}</td>
 					<td> Directions </td>
-					<td> Show </td>
+					<td onClick={this.showWreck}> Show </td>
 			</tr>
 			
 		})
-
-		console.log(myWrecks, 'myWrecks')
 
 		return (
 
@@ -67,6 +92,8 @@ class MyWrecksContainer extends Component {
 					  {myWrecks}
 				  </tbody>
 				</table>
+
+				<MyWreckShow showWreck={this.state.showWreck} closeWreck={this.closeWreck} wreckInd={this.state.wreckInd}/>
 
 			</div>
 

@@ -48,7 +48,8 @@ class LogWreck extends Component {
 
 	addWreck = async (name, latitude, longitude, depth, description, image) => {
 
-		const wrecks = await fetch ('http://localhost:9292/wrecks', {
+		// Add wreck to the wrecks table
+		const newWreck = await fetch ('http://localhost:9292/wrecks', {
 			method: 'POST',
 			body: JSON.stringify({
 				name: name,
@@ -61,11 +62,12 @@ class LogWreck extends Component {
 			credentials: 'include'
 		})
 
-		const wrecksParsed = await wrecks.json();
+		const newWreckParsed = await newWreck.json();
 
-		const newWreckId = await wrecksParsed.added_wreck.id;
+		const newWreckId = await newWreckParsed.added_wreck.id;
 
-		const newWreckList = await fetch ('http://localhost:9292/userwrecks', {
+		// Add a wreck to the user_wrecks table
+		const newUserWreck = await fetch ('http://localhost:9292/userwrecks', {
 			method: 'POST',
 			body: JSON.stringify({
 				wreck_id: newWreckId
