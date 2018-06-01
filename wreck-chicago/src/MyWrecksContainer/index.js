@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MyWreckShow from '../MyWreckShow';
+import EditMyWreck from '../EditMyWreck';
 
 
 class MyWrecksContainer extends Component {
@@ -11,7 +12,8 @@ class MyWrecksContainer extends Component {
 		this.state = {
 			myWrecks: [],
 			wreckInd: {},
-			showWreck: false
+			showWreck: false,
+			showEdit: false
 		}
 	}
 
@@ -66,6 +68,58 @@ class MyWrecksContainer extends Component {
 
 	}
 
+	showEdit = async () => {
+
+		this.setState({
+			showWreck: false,
+			showEdit: true
+		})
+
+		console.log(this.state, 'state after edit click')
+		
+	}
+
+	editWreck = async (name, latitude, longitude, depth, description, image) => {
+
+		const editId = this.state.wreckInd.id
+
+		const editWreck = await fetch(`http://localhost:9292/wrecks/${editId}`, {
+			method: 'PUT', 
+			body: JSON.stringify({
+				name: name,
+				latitude: latitude,
+				longitude: longitude,
+				depth: depth,
+				description: description,
+				image: image
+			}),
+			credentials: 'include'
+		})
+
+		const response = await editWreck.json();
+
+		const editedWreckIndex = this.state.myWrecks.findIndex((wreck) => {
+			
+			return wreck.id === response.edited_wreck.id
+
+		})
+
+		this.state.myWrecks[editedWreckIndex] = response.edited_wreck;
+
+		this.setState({
+			showEdit: false
+		})
+		
+	}
+
+	closeEdit = async () => {
+
+		this.setState({
+			showEdit: false
+		})
+		
+	}
+
 	deleteWreck = async () => {
 
 		const wreckId = this.state.wreckInd.id
@@ -76,12 +130,6 @@ class MyWrecksContainer extends Component {
 		});
 		
 		const response = await deleteUserWreck.json();
-
-		console.log(response, 'response deleteWreck')
-
-		console.log(wreckId, 'wreckId after response')
-
-		console.log(this.state.myWrecks, 'state.myWrecks')
 
 
 		if (response.success){
@@ -97,8 +145,6 @@ class MyWrecksContainer extends Component {
 	}
 
 	render () {
-
-		console.log(this.state, 'state in myWrecksContainer')
 
 		const myWrecks = this.state.myWrecks.map((wreck, i) => {
 
@@ -127,7 +173,8 @@ class MyWrecksContainer extends Component {
 				  </tbody>
 				</table>
 
-				<MyWreckShow showWreck={this.state.showWreck} closeWreck={this.closeWreck} wreckInd={this.state.wreckInd} deleteWreck={this.deleteWreck}/>
+				<MyWreckShow showWreck={this.state.showWreck} closeWreck={this.closeWreck} wreckInd={this.state.wreckInd} deleteWreck={this.deleteWreck} showEdit={this.showEdit} />
+				<EditMyWreck showEdit={this.state.showEdit} closeEdit={this.closeEdit} wreckInd={this.state.wreckInd} editWreck={this.editWreck} />
 
 			</div>
 
