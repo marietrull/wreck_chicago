@@ -1,12 +1,12 @@
 #logRegContain{
 
+	background-color: #144c9e;
 	border-style: solid;
-	border-color: #3385ff;
 	border-radius: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 45%;
-	height: 100px;
+	height: 110px;
 	display: flex;
 	flex-direction: column;
 }
@@ -21,17 +21,23 @@
 }
 
 .logRegTab {
-	background-color: #3385ff;
+	background-color: #144c9e;
+	border-color: black;
 	border-style: solid;
 	border-size: 2px;
-	border-color: white;
 	color: white;
 	padding: 5px;
 	font-size: 25px;
 	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+.logRegTab:nth-child(odd){
+	margin-left: 5px;
 }
 
 #inpUser {
+	border-radius: 3px;
 	margin-top: 15px;
 	margin-left: auto;
 	margin-right: auto;
@@ -39,16 +45,20 @@
 }
 
 #inpPass {
+	border-radius: 3px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 5px;
 	width: 50%;
 }
 
 #logBtn {
-	background-color: #3385ff;
-	color: white;
+	background-color: white;
+	color: black;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 5px;
 	width: 25%;
 	height: 20px;
+	border-radius: 5px;
 }

@@ -1,21 +1,30 @@
 #wreckNav {
 	list-style-type: none;
-	margin-top: -10px;
+	margin-top: -5px;
     padding: 10px;
-    border-style: solid;
-	border-color: #3385ff;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 3px;
+	border-top: none;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
     display: flex;
     justify-content: space-around;
 }
 
+.navItem{
+	color: #144c9e;
+	text-decoration: none;
+}
+
 #wreckStart {
 	border-style: solid;
-	border-color: #3385ff;
-	border-radius: 10px;
+	border-radius: 5px;
+	border-width: 3px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 65%;
-	height: 150px;
+	width: 75%;
+	height: 60%;
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
@@ -28,14 +37,14 @@
 }
 
 .wreckOp {
-	background-color: #3385ff;
-	border-radius: 10px;
+	border: solid black 2px;
+	text-decoration: none;
+	background-color: #144c9e;
+	border-radius: 5px;
 	color: white;
 	margin-left: auto;
 	margin-right: auto;
-	height: 20px;
 	padding: 10px;
 	margin: 5px;
-	height: 50px;
 	width: 100px;
 }

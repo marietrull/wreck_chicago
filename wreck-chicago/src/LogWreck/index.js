@@ -111,7 +111,7 @@ class LogWreck extends Component {
 		return (
 
 			<form  onSubmit={this.handleSubmit}>
-				<div> Log a Wreck </div>
+				<h1> Log a Wreck </h1>
 
 				<div id='newWreckInputs'>
 

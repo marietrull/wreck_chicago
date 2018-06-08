@@ -164,10 +164,10 @@ class MyWrecksContainer extends Component {
 				<table className="wreckTable">
 					<tbody>
 					  <tr>
-					    <th>Name</th>
-					    <th>Depth</th> 
-					    <th>Directions</th>
-					    <th>Show</th>
+					    <th className='tableHead'>Name</th>
+					    <th className='tableHead'>Depth</th> 
+					    <th className='tableHead'>Directions</th>
+					    <th className='tableHead'>Show</th>
 					  </tr>
 					  {myWrecks}
 				  </tbody>

@@ -80,14 +80,18 @@ class App extends Component {
         <div className='headerContainer'>
 
           <div className='headerText'>
-            Wreck Chicago
+
+           Wreck Chicago
+
           </div>
+
+          
 
         </div>
 
 
         {this.state.logged ? <HomeContainer/> : <LoginRegister loginAndRegisterBtn={this.loginAndRegisterBtn} changeRegistering={this.changeRegistering}/>}
-        
+
       </div>
     );
   }

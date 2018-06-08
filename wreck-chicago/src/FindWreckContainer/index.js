@@ -96,11 +96,11 @@ class FindWreckContainer extends Component{
 
 		const wreckList = this.state.wrecks.map((wreck, i) => {
 
-		return <tr id={wreck.id} key={i}>
+		return <tr classname='wreckRow'id={wreck.id} key={i}>
 					<td onClick={this.getWreckInd}>{wreck.name}</td>
 					<td>{wreck.depth}</td>
 					<td> Directions </td>
-					<td onClick={this.showWreck}> Show </td>
+					<td onClick={this.showWreck}> Open </td>
 		</tr>
 			
 		})
@@ -114,10 +114,10 @@ class FindWreckContainer extends Component{
 		<table className="wreckTable">
 			<tbody>
 			  <tr>
-			    <th>Name</th>
-			    <th>Depth</th> 
-			    <th>Directions</th>
-			    <th>Show</th>
+			    <th className='tableHead'>Name</th>
+			    <th className='tableHead'>Depth</th> 
+			    <th className='tableHead'>Directions</th>
+			    <th className='tableHead'>Wreck Info</th>
 			  </tr>
 			  {wreckList}
 		  </tbody>

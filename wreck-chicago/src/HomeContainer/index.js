@@ -13,11 +13,11 @@ const HomeContainer = () => {
 			<div>
 			
 				<ul id='wreckNav'>
-					<li><Link to="/">Home</Link></li>
-		  			<li><Link to="/FindAWreck">Wreck Finder</Link></li>
-		  			<li><Link to="/LogAWreck">Log a Wreck</Link></li>
-					<li><Link to="/MyWrecks">My Wrecks</Link></li>
-					<li><a href="/logout">Logout</a></li>
+					<li ><Link className='navItem' to="/">Home</Link></li>
+		  			<li><Link className='navItem' to="/FindAWreck">Wreck Finder</Link></li>
+		  			<li><Link className='navItem' to="/LogAWreck">Log a Wreck</Link></li>
+					<li><Link className='navItem' to="/MyWrecks">My Wrecks</Link></li>
+					<li><a className='navItem' href="/logout">Logout</a></li>
 				</ul>
 
 				<Switch>

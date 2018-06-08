@@ -12,13 +12,14 @@ const WreckStart = () => {
 			<div id='wreckStart'>
 
 				<div id='wreckStartText'>
-					Let's Get Started!
+					<h1> Welcome to Wreck Chicago, a place to explore local shipwrecks!</h1>
+					<p> Click below to get started.</p>
 				</div>
 
 
 				<div id='wreckOptions'>
-					<div className='wreckOp'><Link to='/FindAWreck'>Find a Wreck</Link></div>
-					<div className='wreckOp'><Link to='/LogAWreck'>Log a Wreck</Link></div>
+					<div><Link className='wreckOp' to='/FindAWreck'>Find a Wreck</Link></div>
+					<div><Link className='wreckOp' to='/LogAWreck'>Log a Wreck</Link></div>
 				</div>
 
 
