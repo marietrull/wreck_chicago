@@ -74,8 +74,6 @@ class MyWrecksContainer extends Component {
 			showWreck: false,
 			showEdit: true
 		})
-
-		console.log(this.state, 'state after edit click')
 		
 	}
 
@@ -149,10 +147,8 @@ class MyWrecksContainer extends Component {
 		const myWrecks = this.state.myWrecks.map((wreck, i) => {
 
 			return <tr id={wreck.id} key={i}>
-					<td>{wreck.name}</td>
+					<td onClick={this.showWreck}>{wreck.name}</td>
 					<td>{wreck.depth}</td>
-					<td> Directions </td>
-					<td onClick={this.showWreck}> Show </td>
 			</tr>
 			
 		})
@@ -161,17 +157,17 @@ class MyWrecksContainer extends Component {
 
 			<div>
 
-				<table className="wreckTable">
-					<tbody>
-					  <tr>
-					    <th className='tableHead'>Name</th>
-					    <th className='tableHead'>Depth</th> 
-					    <th className='tableHead'>Directions</th>
-					    <th className='tableHead'>Show</th>
-					  </tr>
-					  {myWrecks}
-				  </tbody>
-				</table>
+			<p> Click on the name of a wreck to learn more! </p>
+
+			<table className="wreckTable">
+				<tbody>
+				  <tr>
+				    <th className='tableHead'>Name</th>
+				    <th className='tableHead'>Depth</th> 
+				  </tr>
+				  {myWrecks}
+			  </tbody>
+			</table>
 
 				<MyWreckShow showWreck={this.state.showWreck} closeWreck={this.closeWreck} wreckInd={this.state.wreckInd} deleteWreck={this.deleteWreck} showEdit={this.showEdit} />
 				<EditMyWreck showEdit={this.state.showEdit} closeEdit={this.closeEdit} wreckInd={this.state.wreckInd} editWreck={this.editWreck} />

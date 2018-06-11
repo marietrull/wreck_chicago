@@ -91,8 +91,6 @@ class FindWreckContainer extends Component{
 
 	render () {
 
-		console.log(this.state, 'state in FindWreckContainer')
-
 
 		const wreckList = this.state.wrecks.map((wreck, i) => {
 
@@ -102,8 +100,6 @@ class FindWreckContainer extends Component{
 		</tr>
 			
 		})
-
-		console.log(wreckList, 'wreckList')
 
 		return (
 

@@ -17,7 +17,7 @@ console.log(wreckInd.image, 'image link')
 
           <div id="wreckContent">
 
-            <div className={wreckInd.image == null ? 'wreckPhotoNone' : 'wreckElement'}>
+            <div className={wreckInd.image == null || wreckInd.image == ""? 'wreckPhotoNone' : 'wreckElement'}>
        		 		<h1>Name</h1>
        		 		<p>{wreckInd.name}</p>
        		 		<h2>Location</h2>
@@ -28,7 +28,7 @@ console.log(wreckInd.image, 'image link')
        		 		<p>Description: {wreckInd.description}</p>
             </div>
 
-            <div className={wreckInd.image == null ? 'wreckPhotoNone' : 'wreckElement'}>
+            <div className={wreckInd.image == null || wreckInd.image == "" ? 'wreckPhotoNone' : 'wreckElement'}>
               <img id="wreckSource" src={wreckInd.image} />
 
             </div>
