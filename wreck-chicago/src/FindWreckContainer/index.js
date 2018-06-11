@@ -96,7 +96,7 @@ class FindWreckContainer extends Component{
 
 		const wreckList = this.state.wrecks.map((wreck, i) => {
 
-		return <tr classname='wreckRow'id={wreck.id} key={i}>
+		return <tr className='wreckRow'id={wreck.id} key={i}>
 					<td onClick={this.getWreckInd}>{wreck.name}</td>
 					<td>{wreck.depth}</td>
 					<td> Directions </td>

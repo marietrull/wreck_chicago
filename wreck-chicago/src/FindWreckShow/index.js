@@ -14,14 +14,24 @@ const FindWreckShow = ({showWreck, closeWreck, wreckInd})=>{
 
    		 		<span className="close" onClick={closeWreck}>&times;</span>
 
-   		 		<h1>Name</h1>
-   		 		<p>{wreckInd.name}</p>
-   		 		<h2>Location</h2>
-   		 		<p>Latitude: {wreckInd.latitude}</p>
-   		 		<p>Longitude: {wreckInd.longitude}</p>
-   		 		<h2>About</h2>
-   		 		<p>Depth: {wreckInd.depth}</p>
-   		 		<p>Description: {wreckInd.description}</p>
+          <div className="wreckContent">
+
+            <div className="wreckInfo">
+       		 		<h1>Name</h1>
+       		 		<p>{wreckInd.name}</p>
+       		 		<h2>Location</h2>
+       		 		<p>Latitude: {wreckInd.latitude}</p>
+       		 		<p>Longitude: {wreckInd.longitude}</p>
+       		 		<h2>About</h2>
+       		 		<p>Depth: {wreckInd.depth}</p>
+       		 		<p>Description: {wreckInd.description}</p>
+            </div>
+
+            <div className="wreckPhoto">
+              PHOTO
+            </div>
+
+          </div>
 
   			</div>
 
