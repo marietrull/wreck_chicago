@@ -56,9 +56,10 @@
 }
 
 #wreckSource{
-    width: 95%;
+    width: 75%;
     height: auto;
-    margin-top: 50%;
+    margin-top: 150px;
+    margin-left: 50px;
 }
 
 
