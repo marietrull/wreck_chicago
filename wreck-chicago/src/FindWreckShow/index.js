@@ -4,6 +4,7 @@ import './style.css';
 
 const FindWreckShow = ({showWreck, closeWreck, wreckInd})=>{
 
+console.log(wreckInd.image, 'image link')
 	
 	return(
 
@@ -14,9 +15,9 @@ const FindWreckShow = ({showWreck, closeWreck, wreckInd})=>{
 
    		 		<span className="close" onClick={closeWreck}>&times;</span>
 
-          <div className="wreckContent">
+          <div id="wreckContent">
 
-            <div className="wreckInfo">
+            <div className={wreckInd.image == null ? 'wreckPhotoNone' : 'wreckElement'}>
        		 		<h1>Name</h1>
        		 		<p>{wreckInd.name}</p>
        		 		<h2>Location</h2>
@@ -27,11 +28,14 @@ const FindWreckShow = ({showWreck, closeWreck, wreckInd})=>{
        		 		<p>Description: {wreckInd.description}</p>
             </div>
 
-            <div className="wreckPhoto">
-              PHOTO
+            <div className={wreckInd.image == null ? 'wreckPhotoNone' : 'wreckElement'}>
+              <img id="wreckSource" src={wreckInd.image} />
+
             </div>
 
           </div>
+
+          <button> Directions </button>
 
   			</div>
 

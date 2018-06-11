@@ -42,22 +42,26 @@
     cursor: pointer;
 }
 
-.wreckContent{
+#wreckContent{
     display: flex;
 }
 
-.wreckInfo{
+.wreckElement{
     text-align: left;
     width: 50%;
 }
 
-.wreckPhoto{
-    background-color: yellow;
-    width: 50%;
+#wreckPhotoNone{
+    
+}
+
+#wreckSource{
+    width: 95%;
+    height: auto;
 }
 
 
 
-h1, h2 {
+h1, h2, p {
     color: #144c9e;
 }
