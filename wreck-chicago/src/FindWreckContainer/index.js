@@ -28,7 +28,7 @@ class FindWreckContainer extends Component{
 
 	getItems = async () => {
 
-		const wrecksJson = await fetch('http://localhost:9292/wrecks', {
+		const wrecksJson = await fetch('https://calm-beach-74116.herokuapp.com/wrecks', {
 			credentials: 'include'
 		})
 
@@ -43,7 +43,7 @@ class FindWreckContainer extends Component{
 
 		const wreckId = e.target.parentNode.id;
 
-		const wreckJson = await fetch(`http://localhost:9292/wrecks/${wreckId}`, {
+		const wreckJson = await fetch(`https://calm-beach-74116.herokuapp.com/wrecks/${wreckId}`, {
 			credentials: 'include'
 
 		})
@@ -68,7 +68,7 @@ class FindWreckContainer extends Component{
 
 	addWreck = async (name, latitude, longitude, depth, description, image) => {
 
-		const wrecks = await fetch ('http://localhost:9292/wrecks', {
+		const wrecks = await fetch ('https://calm-beach-74116.herokuapp.com/wrecks', {
 			method: 'POST',
 			body: JSON.stringify({
 				name: name,

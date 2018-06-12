@@ -41,7 +41,7 @@ class App extends Component {
     if(this.state.registering == true){
 
 
-      const registerJSON = await fetch("http://localhost:9292/user/register",
+      const registerJSON = await fetch("https://calm-beach-74116.herokuapp.com/user/register",
       {
         method: "POST",
         credentials: 'include',
@@ -56,7 +56,7 @@ class App extends Component {
 
     else {
 
-      const loginJSON = await fetch("http://localhost:9292/user/login",
+      const loginJSON = await fetch("https://calm-beach-74116.herokuapp.com/user/login",
       {
         method: "POST",
         credentials: 'include',

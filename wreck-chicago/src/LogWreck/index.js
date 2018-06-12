@@ -52,7 +52,7 @@ class LogWreck extends Component {
 	addWreck = async (name, latitude, longitude, depth, description, image) => {
 
 		// Add wreck to the wrecks table
-		const newWreck = await fetch ('http://localhost:9292/wrecks', {
+		const newWreck = await fetch ('https://calm-beach-74116.herokuapp.com/wrecks', {
 			method: 'POST',
 			body: JSON.stringify({
 				name: name,
@@ -70,7 +70,7 @@ class LogWreck extends Component {
 		const newWreckId = await newWreckParsed.added_wreck.id;
 
 		// Add a wreck to the user_wrecks table
-		const newUserWreck = await fetch ('http://localhost:9292/userwrecks', {
+		const newUserWreck = await fetch ('https://calm-beach-74116.herokuapp.com/userwrecks', {
 			method: 'POST',
 			body: JSON.stringify({
 				wreck_id: newWreckId
