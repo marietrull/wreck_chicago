@@ -1,0 +1,26 @@
+#scubaShops {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.shopInfo {
+	border: 3px solid black;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+	width: 50%;
+}
+
+.shopName {
+	text-decoration: underline;
+}
+
+.diveInfo {
+	margin-left: 30px;
+	text-align: left;
+}
+
+.diveWeb {
+	margin-bottom: 5px;
+}
