@@ -5,6 +5,7 @@ import WreckStart from '../WreckStart';
 import FindWreckContainer from '../FindWreckContainer';
 import LogWreck from'../LogWreck';
 import MyWrecksContainer from '../MyWrecksContainer';
+import FindShopContainer from '../FindShopContainer';
 
 const HomeContainer = () => {
 		
@@ -17,6 +18,7 @@ const HomeContainer = () => {
 		  			<li><Link className='navItem' to="/FindAWreck">Wreck Finder</Link></li>
 		  			<li><Link className='navItem' to="/LogAWreck">Log a Wreck</Link></li>
 					<li><Link className='navItem' to="/MyWrecks">My Wrecks</Link></li>
+					<li><Link className='navItem' to="/FindAShop">Find a Shop</Link></li>
 					<li><a className='navItem' href="/logout">Logout</a></li>
 				</ul>
 
@@ -25,6 +27,7 @@ const HomeContainer = () => {
 					<Route exact path='/FindAWreck' component={FindWreckContainer} />
 					<Route exact path='/LogAWreck' component={LogWreck} />  
 					<Route exact path='/MyWrecks' component={MyWrecksContainer} />
+					<Route exact path='/FindAShop' component={FindShopContainer} />
 				</Switch>
 
 			</div>
