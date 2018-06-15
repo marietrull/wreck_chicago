@@ -30,7 +30,7 @@ class MyWrecksContainer extends Component {
 
 	getMyWrecks = async () => {
 		
-		const myWrecksJson = await fetch('https://calm-beach-74116.herokuapp.com/mywrecks', {
+		const myWrecksJson = await fetch('https://calm-beach-74116.herokuapp.com/userwrecks', {
 			credentials: 'include'
 		})
 
@@ -47,7 +47,7 @@ class MyWrecksContainer extends Component {
 
 		console.log(wreckId, 'wreckId')
 
-		const wreckJson = await fetch (`https://calm-beach-74116.herokuapp.com/wrecks/${wreckId}`, {
+		const wreckJson = await fetch (`https://calm-beach-74116.herokuapp.com/userwrecks/${wreckId}`, {
 			credentials: 'include'
 		})
 
@@ -81,7 +81,7 @@ class MyWrecksContainer extends Component {
 
 		const editId = this.state.wreckInd.id
 
-		const editWreck = await fetch(`https://calm-beach-74116.herokuapp.com/wrecks/${editId}`, {
+		const editWreck = await fetch(`https://calm-beach-74116.herokuapp.com/userwrecks/${editId}`, {
 			method: 'PUT', 
 			body: JSON.stringify({
 				name: name,
@@ -122,7 +122,7 @@ class MyWrecksContainer extends Component {
 
 		const wreckId = this.state.wreckInd.id
 
-		const deleteUserWreck = await fetch (`https://calm-beach-74116.herokuapp.com/wrecks/${wreckId}`, {
+		const deleteUserWreck = await fetch (`https://calm-beach-74116.herokuapp.com/userwrecks/${wreckId}`, {
 			method:'DELETE', 
 			credentials: 'include'
 		});

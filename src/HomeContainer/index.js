@@ -23,7 +23,7 @@ const HomeContainer = () => {
 				<Switch>
 					<Route exact path='/' component={WreckStart} />
 					<Route exact path='/FindAWreck' component={FindWreckContainer} />
-					<Route exact path='/LogAWreck' component={LogWreck} />
+					<Route exact path='/LogAWreck' component={LogWreck} />  
 					<Route exact path='/MyWrecks' component={MyWrecksContainer} />
 				</Switch>
 

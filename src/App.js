@@ -90,7 +90,7 @@ class App extends Component {
         </div>
 
 
-        {this.state.logged ? <HomeContainer/> : <LoginRegister loginAndRegisterBtn={this.loginAndRegisterBtn} changeRegistering={this.changeRegistering}/>}
+        {this.state.logged ? <HomeContainer/> : <LoginRegister loginAndRegisterBtn={this.loginAndRegisterBtn} changeRegistering={this.changeRegistering} registering={this.state.registering}/>}
 
       </div>
     );

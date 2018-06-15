@@ -20,7 +20,26 @@
 	margin-right: auto;
 }
 
-.logRegTab {
+#LogTab {
+	background-color: white;
+	border-color: black;
+	border-style: solid;
+	border-size: 2px;
+	color: #144c9e;
+	padding: 5px;
+	font-size: 25px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+#LogTab:nth-child(odd){
+	margin-left: 5px;
+}
+
+#RegTab:nth-child(odd){
+	margin-left: 5px;
+}
+
+#RegTab {
 	background-color: #144c9e;
 	border-color: black;
 	border-style: solid;
@@ -32,7 +51,7 @@
 	margin-bottom: 5px;
 }
 
-.logRegTab:nth-child(odd){
+#RegTab:nth-child(odd){
 	margin-left: 5px;
 }
 
