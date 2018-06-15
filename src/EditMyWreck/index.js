@@ -76,8 +76,6 @@ class EditMyWreck extends Component {
 
 	render () {
 
-		console.log(this.state, 'state in EditMyWreck')
-
 		return (
 
 			<div id="myModal" className={this.props.showEdit ? 'modal' : 'modalNone'}>

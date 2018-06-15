@@ -30,7 +30,6 @@ const MyWreckShow = ({showWreck, closeWreck, wreckInd, deleteWreck, showEdit}) =
 
 					</div>
 					
-					<button> Directions </button>
 		  			<button onClick={showEdit}>Edit</button>
 		  			<button onClick={deleteWreck}>Delete</button>
 

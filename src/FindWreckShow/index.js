@@ -3,8 +3,6 @@ import './style.css';
 
 
 const FindWreckShow = ({showWreck, closeWreck, wreckInd})=>{
-
-console.log(wreckInd.image, 'image link')
 	
 	return(
 
@@ -34,8 +32,6 @@ console.log(wreckInd.image, 'image link')
             </div>
 
           </div>
-
-          <button> Directions </button>
 
   			</div>
 
