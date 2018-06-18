@@ -119,6 +119,9 @@ class FindWreckContainer extends Component{
 
 		<FindWreckShow showWreck={this.state.showWreck} closeWreck={this.closeWreck} wreckInd={this.state.wreckInd}/>
 
+
+		<p id="divewarn"> This information is not exhaustive. Please consult with your local dive shop for up-to-date information and dive at your own risk!</p>
+
 		</div>
 
 		)
